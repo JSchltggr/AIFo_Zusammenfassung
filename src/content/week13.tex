@@ -1,0 +1,29 @@
+\section{Clustering (Unsupervised Learning)}
+As the examples are unlabeled, clustering relies on unsupervised machine learning. If the examples are labeled, then clustering becomes classification.
+
+\subsection{k-Means Clustering}
+\textbf{Initialization:} performance depends on the random initialization of the seeds for the centroids (Initialize randomly, run multiple times). 
+
+\textbf{Stopping Criterion:}  When centres don’t change,  The datapoints assigned to specific cluster remain the same,  The distance of datapoints from their centre (Threshold),  Fixed number of iterations have reached.
+
+\textbf{Standardization of Data:} Features with large values may dominate the distance value. Features with small values will have no impact in the clustering. We should normalise values.
+
+\begin{enumerate}
+	\itemsep -0.5em
+  	\item We define the number of klusters $k_{c}$
+  	\item Initialize the value of k cluster centres (centroids) $C_{1}. C_{2}..C_{k_{c}}$
+  	\item Assignment
+  		\SubItem{Find the squared Euclidean distance between the centres and all the data points}
+  		\SubItem{Assign each data point to the cluster of the nearest centre.}
+  	\item Update: Update the center for each cluster.
+  	\item If (stoppin criterion met) \{ Stop \} else \{go to assignment\}
+\end{enumerate}
+
+\textbf{Caluclate Cluster Center}: $C_{R_y} = \frac{Sum of x coefficients}{data points}$, $C_{R_y} = \frac{Sum of y coefficients}{data points}$ 
+
+\subsection{Evaluation: Within-cluster sum-of-squares (WCSS) }
+Sum of squared distances of samples to their closest cluster centre.
+
+\subsection{Evaluation: Silhouette Score} 
+How far away the datapoints in one cluster are, from the datapoints in another cluster. Shilloute Score for point a  =$\frac{b-a}{max(a,b)}$ where a=average intra-cluster distance i.e the average distance between each point within a cluster, b=average inter-cluster distance i.e the average distance between a cluster and its nearest neighbour cluster.
+

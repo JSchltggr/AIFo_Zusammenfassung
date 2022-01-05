@@ -1,0 +1,14 @@
+\section{Gradient Descent}
+Gradient Descent is an iterative method. At each iteration, the model parameters are updated such that the Loss (MSE) is reduced. Other Loss function than the MSE can be choosen. The SG and SGD is very sensitive to the learning rate. \textbf{Problem:} For big Data the GD is very slow.
+\begin{enumerate}
+  \itemsep -0.5em
+  \item Take the derivative of the Loss Function for each parameter in it. (Gradient of Loss Function)
+  \item Pick random values for parameters
+  \item Plug the parameter values int the derivates (Gradient)
+  \item Calculate the Step Size= $Slope * Learning Rate$.
+  \item Calc new Parameters = $Old Parameter - Step Size$
+  \item if(!(step size > x || max steps taken)) go to step 3.
+\end{enumerate}
+
+\subsection{Stochastic Gradient Descent (SGD)}
+At each iteration step, the gradient is calculated on a (randomly chosen) subset of the data (strict definition = one sample per step). Most of the time a mini-batch of data is selected. \textbf{(simulated) annealing:} learning rate is reduced over time. If new data is added we don't have to do all calculations again. There are many differnet options (called schedules) how to reduce alpha over time. Here we apply an exponential decay. Gradient Descent is the basic building block behind many variants: Adam, Adagrad, RMSProp etc.
