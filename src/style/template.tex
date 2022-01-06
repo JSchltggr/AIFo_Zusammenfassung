@@ -15,7 +15,7 @@
 \usepackage[T1]{fontenc}
 
 %format
-\geometry{top=0.1cm,left=0.1cm,right=0.1cm,bottom=0.2cm}
+\geometry{top=0.4cm,left=0.4cm,right=0.4cm,bottom=0.4cm}
 
 %Define Color
 \definecolor{dkgreen}{rgb}{0,0.6,0}
@@ -210,13 +210,18 @@ morestring=[b]',
 morestring=[b]",
 }
 
+% Define SubItem
+\newcommand{\SubItem}[1]{
+        {\setlength\itemindent{15pt} \item[-] #1}
+}
+
 % Define Section Format
 \titleformat{name=\section}[block]
 {\normalfont\LARGE\bfseries}
 {}
 {0pt}
 {\colorsection}
-\titlespacing*{\section}{0pt}{0.3ex}{0.3ex}
+\titlespacing*{\section}{0pt}{0.1ex}{0.1ex}
 
 \newcommand{\colorsection}[1]{%
 \colorbox{ForestGreen!40}{\parbox{0.99\linewidth}{\color{black}\thesection\ #1}}}
@@ -228,7 +233,7 @@ morestring=[b]",
 {}
 {0pt}
 {\colorsubsection}
-\titlespacing*{\subsection}{0pt}{0.3ex}{0.3ex}
+\titlespacing*{\subsection}{0pt}{0.1ex}{0.1ex}
 
 \newcommand{\colorsubsection}[1]{%
 \colorbox{yellow!50}{\parbox{0.99\linewidth}{\color{black}\thesubsection\ #1}}}
@@ -239,7 +244,7 @@ morestring=[b]",
 {}
 {0pt}
 {\colorsubsubsection}
-\titlespacing*{\subsubsection}{0pt}{0.3ex}{0.3ex}
+\titlespacing*{\subsubsection}{0pt}{0.1ex}{0.1ex}
 
 \newcommand{\colorsubsubsection}[1]{%
 \colorbox{BrickRed!40}{\parbox{0.99\linewidth}{\color{black}\thesubsubsection\ #1}}}

@@ -1,16 +1,14 @@
 \section{Clustering (Unsupervised Learning)}
-As the examples are unlabeled, clustering relies on unsupervised machine learning. If the examples are labeled, then clustering becomes classification.
+As the examples are unlabeled, clustering relies on unsupervised machine learning. If the examples are labeled, then clustering becomes classification. The goal of unsupervised learning is to self-discover patterns from the data. Used for social network analysis, astronomical data, google news articles for category, marked segmentation, recommendation systems
 
 \subsection{k-Means Clustering}
-\textbf{Initialization:} performance depends on the random initialization of the seeds for the centroids (Initialize randomly, run multiple times). 
-
-\textbf{Stopping Criterion:}  When centres don’t change,  The datapoints assigned to specific cluster remain the same,  The distance of datapoints from their centre (Threshold),  Fixed number of iterations have reached.
-
+\textbf{Initialization:} performance depends on the random initialization of the seeds for the centroids (Initialize randomly, run multiple times).\\
+\textbf{Stopping Criterion:}  When centres don’t change. The datapoints assigned to specific cluster remain the same. The distance of datapoints from their centre (Threshold). Fixed number of iterations have reached.\\
 \textbf{Standardization of Data:} Features with large values may dominate the distance value. Features with small values will have no impact in the clustering. We should normalise values.
 
-\begin{enumerate}
+\begin{enumerate}[topsep=0pt]
 	\itemsep -0.5em
-  	\item We define the number of klusters $k_{c}$
+  	\item We define the number of clusters $k_{c}$
   	\item Initialize the value of k cluster centres (centroids) $C_{1}. C_{2}..C_{k_{c}}$
   	\item Assignment
   		\SubItem{Find the squared Euclidean distance between the centres and all the data points}
@@ -18,8 +16,7 @@ As the examples are unlabeled, clustering relies on unsupervised machine learnin
   	\item Update: Update the center for each cluster.
   	\item If (stoppin criterion met) \{ Stop \} else \{go to assignment\}
 \end{enumerate}
-
-\textbf{Caluclate Cluster Center}: $C_{R_y} = \frac{Sum of x coefficients}{data points}$, $C_{R_y} = \frac{Sum of y coefficients}{data points}$ 
+\textbf{Caluclate Cluster Center}: $C_{R_x} = \frac{Sum of-x-coefficients}{data points}$, $C_{R_y} = \frac{Sum of-y-coefficients}{data points}$
 
 \subsection{Evaluation: Within-cluster sum-of-squares (WCSS) }
 Sum of squared distances of samples to their closest cluster centre.

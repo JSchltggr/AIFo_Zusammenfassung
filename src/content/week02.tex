@@ -1,11 +1,11 @@
 \section{The four Ingredients of ML}
 \textbf{Data} The dataset we are given plus the pre-processing pipe-line including cleansing, feature-engineering, data-augmentation etc. \\
 \textbf{Cost-Function (Loss)}
-  	A formal mathematical expression for good and bad (MSE, etc.). \\
-\textbf{Model} Something simple as the linear model $\hat{y}_{i}=ax_{i}+b$ or a million-parameter neural network. Different tasks have different models. \\
-\textbf{Optimization Procedure} Algorithm that changes the parameters of the model (SGD, ADAM, RMSProp).
+  	A formal mathematical expression for good and bad (Mean Square Error (MSE), etc.). \\
+\textbf{Model} Something simple as the linear model $\hat{y}_{i}=ax_{i}+b$ or a million-parameter neural network. Different tasks require different models. $\rightarrow$ domain-knowledge required to find best model \\
+\textbf{Optimization Procedure} Algorithm that changes the parameters of the model such that the cost-function is minimized (SGD, ADAM, RMSProp).\\
 \textbf{Performance Optimization} Building efficient pipe-lines is difficult. \\
-\textbf{Visualization, Evaluation of learning process} Learning curves, Performance measures. \\
+\textbf{Visualization and Evaluation of learning process} Learning curves, Performance measures. \\
 \textbf{Cross-Validation \& Regularization} Goal: train models that generalize well to unseen data.
 
 \section{Naturale Language Processing}
@@ -13,10 +13,10 @@
 A One-hot vector is a vector with a single value 1 and all other set to 0. We create for each word a unique vector. \textbf{Disadvantages:} High dimensional, sparse representation, no generalisation (all words are unrelated to each other), does not capture the meaning.
 
 \subsection{Indexing}
-An index is used for every word. Indexing is the dense equivalent of One-hot encoding and indexes are more useful than vectors. \textbf{Disadvantages:} Indexing is often a preprocessing step and this indces are then fed into a network to learn representations (embeddings).
+An index is used for every word. Indexing is the dense equivalent of One-hot encoding and indexes are more useful than vectors. \textbf{Disadvantages:} Indexing is often a preprocessing step and this indices are then fed into a network to learn representations (embeddings).
 
-\subsection{Distributed Representation}
-Distributed representations are the opposite of One-hot, instead of concentrating the meaning of a data point into one component or one “element”, the meaning of the data is distributed across the whole vector. \textbf{Finding D.R.} is a difficult task, needs a lot of time, data and CPU/GPU. In practice: download a predefined language model, use an Embedding Layer and optimize the embedding for the task. \textbf{Predefined Word Embedings:} GloVe, Word2Vec.
+\subsection{Distributed Representation (dense vectors)}
+Distributed representations are the opposite of One-hot, instead of concentrating the meaning of a data point into one component or one “element”, the meaning of the data is distributed across the whole vector. \textbf{Finding D.R.} is a difficult task, needs a lot of time, data and CPU/GPU. In practice: download a predefined language model, use an Embedding Layer and optimize the embedding for the task. $\rightarrow$ Similar words share similar represenations. DR can be learned \textbf{Predefined Word Embedings:} GloVe, Word2Vec.
 
 \subsection{Word to Vector}
 A mathematical function maps input into output. In neural networks this function is implemented in a called Embedding Layer. 

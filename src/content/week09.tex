@@ -1,7 +1,8 @@
 \section{Generalization and Regulation}
-\textbf{Training Error (in-sample Error):}  We get the by calculating the classification error of a model with the given data. This error can be 0.
-
-\textbf{Test Error (Generalization Error):} We get this by using two completely disjoint datasets: one to train the model and the other to calculate the classification error. Both datasets need to have values for y. The first dataset is called training data and the second, test data. A good model has a low generalization error.
+\textbf{In-sample error:} It is possible to find a model which perfectly fits the data (MSE = 0) This is the loss minimized
+during the training phase, it is therefore also called \textbf{training error}.\\
+$\rightarrow$ Our goal is to learn a model from data that generalizes well to new data. A good model has a low generalization error.\\
+\textbf{Test Error (Generalization Error):} We get this by using two completely disjoint datasets: one to train the model and the other to calculate the classification error. Both datasets need to have values for y. The first dataset is called training data and the second, test data.
 
 \subsection{Underfitting (High Bias)}
 When we have the scenarion of underfitting we have choosen a too simple model. (in-sample error=Large, Generalization error=Larger)
@@ -16,20 +17,20 @@ We cant calculate the generalization error! We can try to estimate the generaliz
 \begin{minipage}{0,5\linewidth}
 	\textbf{Bias:} The inability for a ML method to capture the true relationsship (High match=low Bias, low match=high Bias)\\
 	\textbf{Variance:} is the difference in fits between two data sets.
-	A low bias generate a high variance and a high bias generates a low variance.  
+	Higher bias implies lower variance, lower bias implies higher variance
 \end{minipage}
 \begin{minipage}{0,5\linewidth}
-	\includegraphics[width=\linewidth]{biasvariance}
+	\includegraphics[width=0.9\linewidth]{biasvariance}\\
 	Low Bias, High Variance
 \end{minipage}
-Note that we use the expression "high bias" in the sense of "a too simple model for the given data" and vica versa. High bias is a design by choice.
+Note that we use the expression high bias in the sense of a too simple model for the given data and vica versa. High bias is a design by choice. $\rightarrow$ Find an optimal balance between bias and variance.
 
 \subsection{Generalization}
-We have to find the optimal balance between the variance and the bias with the help of generalization. we need to ingridient for regularization.
-\begin{enumerate}
+We have to find the optimal balance between the variance and the bias with the help of generalization. We need to ingridient for regularization.
+\begin{enumerate}[topsep=0pt]
   \itemsep -0.5em
   \item A Way to measure complexity: L1-Norm, L2-Norm
-  \item A Way to control model complexity: pelanty to loss, complex models get higher penalty.
+  \item A Way to control model complexity: penalty to loss, complex models get higher penalty.
 \end{enumerate}
 
 \subsection{Regularization}
